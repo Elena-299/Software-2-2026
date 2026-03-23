@@ -39,10 +39,18 @@ class Elevator:
                 print(f"You have moved down to the {self.current} floor")
         return
 
-class Building
+class Building:
+    def __init__(self, bottom, top, num_elevators):
+        self.bottom = bottom
+        self.top = top
+        self.elevators = []
+        for i in range(num_elevators):
+            self.elevators.append(Elevator(bottom, top))
 
+    def run_elevator(self, elevator_number, destination):
+        print(f"Elevator {elevator_number} is going to floor {destination}")
+        self.elevators[elevator_number].go_to_floor(destination)
 
-
-
-
+new_building = Building(0,10,2)
+new_building.run_elevator(1,6)
 
