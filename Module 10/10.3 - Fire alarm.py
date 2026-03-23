@@ -53,11 +53,14 @@ class Building:
         self.elevators[elevator_number].go_to_floor(destination)
 
     def fire_alarm(self):
-        print("All elevators are at the bottom floor")
+        print("\nAll elevators are moving to the bottom floor")
         for elevator in self.elevators:
             elevator.go_to_floor(self.bottom)
 
+new_building = Building(0,10,2)
+new_building.run_elevator(1,6)
 
+new_building.fire_alarm()
 
 
 
