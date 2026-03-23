@@ -33,8 +33,21 @@ racers = []
 for i in range(10):
     registration = f"ABC-{i+1}"
     max_speed = random.randint(100,200)
-    #print(registration, max_speed)
     new_car = Car(registration, max_speed)
 
+race_finished = False
+while not race_finished:
+    for car in racers:
+        change_of_speed = random.randint(-10, 15)
+        car.accelerate(change_of_speed)
+        car.drive(1)
+        if car.distance >= 1:
+            race_finished = True
+            break
 
+print("\n--- Race Results ---")
+print(f"{'Registration':<10} {'Max Speed':<10} {'Speed':<10} {'Distance':<15}")
+
+for car in racers:
+    print(f"{car.registration:<10} {car.max_speed:<10} {car.current_speed:<10} {car.distance:<15.2f}")
 
