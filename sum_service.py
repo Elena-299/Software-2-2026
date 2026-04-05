@@ -7,27 +7,14 @@ def calculate_sum():
     number1 = float(args.get("number1"))
     number2 = float(args.get("number2"))
     total_sum = number1+number2
-    return str(total_sum)
+
+    response = {
+        "number1" : number1,
+        "number2" : number2,
+        "total_sum" : total_sum
+    }
+
+    return response
 
 if __name__ == '__main__':
     app.run(use_reloader=True, host='127.0.0.1', port=5000)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
